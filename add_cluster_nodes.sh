@@ -2,7 +2,7 @@
 
 ipaddr=$(hostname -i | awk ' { print $1 } ')
 
-for i in $(dig +short -p 8600 $PXC_SERVICE)
+for i in $(dig @$CONSUL_ADDR +short -p 8600 $PXC_SERVICE)
 do
 	echo $i 
         mysql -h $i -uroot -p$MYSQL_ROOT_PASSWORD -e "GRANT ALL ON *.* TO '$MYSQL_PROXY_USER'@'$ipaddr' IDENTIFIED BY '$MYSQL_PROXY_PASSWORD'"
