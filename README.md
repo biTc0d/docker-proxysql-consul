@@ -8,7 +8,7 @@ The docker image is available right now at `bitc0d/proxysql-consul:latest`.
 Basic usage
 -----------
 
-docker run -d bitc0d/proxysql-consul:latest add_cluster_nodes.sh
+`docker run -d bitc0d/proxysql-consul:latest add_cluster_nodes.sh`
 
 The Docker image accepts the following parameters (all are mandatory):
 * `MYSQL_ROOT_PASSWORD`
