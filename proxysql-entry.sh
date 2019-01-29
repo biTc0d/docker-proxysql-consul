@@ -19,4 +19,9 @@ if [ -z "$MYSQL_PROXY_PASSWORD" ]; then
         exit 1
 fi
 
+if [ -z "$CONSUL_ADDR" ]; then
+        echo >&2 'Error:  You need to specify CONSUL_ADDR'
+        exit 1
+fi
+
 /usr/bin/proxysql --initial -f -c /etc/proxysql.cnf 
