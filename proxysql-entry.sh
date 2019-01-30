@@ -24,4 +24,6 @@ if [ -z "$CONSUL_ADDR" ]; then
         exit 1
 fi
 
+/usr/bin/add_cluster_nodes.sh &
+
 /usr/bin/proxysql --initial -f -c /etc/proxysql.cnf 

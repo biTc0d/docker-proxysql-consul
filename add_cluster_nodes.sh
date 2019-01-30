@@ -2,6 +2,8 @@
 
 ipaddr=$(hostname -i | awk ' { print $1 } ')
 
+sleep 20
+
 for i in $(dig @$CONSUL_ADDR +short -p 8600 $PXC_SERVICE)
 do
 	echo $i 
